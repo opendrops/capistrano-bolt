@@ -141,3 +141,4 @@ wait for the task to complete and visit the url for your app domain. You should 
 ---
 **Note:** I have written this quick install document seeing that many people have tried to download this gem without any documentation. So this document is prepared in a hurry to fill this gap. If you are getting errors or if the information in this document is inadequate,  contact me @ shankar AT opendrops DOT com and I shall be able to guide you as soon as possible.
 
+<img src="https://ga-beacon.appspot.com/UA-52330604-1/https://github.com/opendrops/capistrano-bolt"/>
