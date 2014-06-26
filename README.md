@@ -118,9 +118,9 @@ run
 ```
 cap install
 ```
-to generate Bolt modified Capfile, deploy.rb, production.rb and stage.rb.
+and change the contents of`Capfile`, `deploy.rb` and `production.rb` file with contents as given in https://github.com/opendrops/capistrano-bolt/tree/master/lib/capistrano/templates/capistrano
 
-Modify the example values given in `deploy.rb` and `production.rb` as per your git repo and server settings.
+This step will be automated in future. For now, just use the given templates as reference to modify the values.
 
 If you use rbenv or rvm or chruby, be sure to add these gems in your gemfile and uncomment the require statements for these gems in `Capfile`.
 
