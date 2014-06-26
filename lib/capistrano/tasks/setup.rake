@@ -6,6 +6,9 @@ namespace :setup do
   task :postgresql do
     invoke "postgresql:create_role"
     invoke "postgresql:create_db"
+    from = File.expand_path("../../templates/postgresql/database.yml.erb", __FILE__)
+    to = File.join(shared_path, 'config/database.yml')
+    upload_template(from, to)
   end
 
   desc 'add site, enable and reload nginx'
