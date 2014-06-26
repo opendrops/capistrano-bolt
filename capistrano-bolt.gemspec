@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["shankar@opendrops.com"]
   spec.summary       = %q{Heroku-like easy deployment for Rails 4 with Capistrano 3, Puma, Nginx and Postgresql.}
   spec.description   = %q{Heroku-like easy deployment for Rails 4 with Capistrano 3, Puma, Nginx and Postgresql.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/opendrops/capistrano-bolt"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
