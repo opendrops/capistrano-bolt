@@ -1,0 +1,4 @@
+export SECRET_KEY_BASE=<%= SecureRandom.hex(40) %>
+export DATABASE_USER=<%= "#{fetch(:postgresql_user)}" %>
+export DATABASE_NAME=<%= "#{fetch(:postgresql_database)}" %>
+export DATABASE_PASSWORD=<%= "#{fetch(:postgresql_password)}" %>
