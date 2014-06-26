@@ -3,7 +3,7 @@ upstream <%= fetch(:application) %>_puma {
 }
 
 server {
-  server_name <%= fetch(:server_name) %>;
+  server_name <%= fetch(:domain_name) %>;
   listen 80;
   root <%= fetch(:deploy_to) %>/current/public;
 
@@ -28,7 +28,7 @@ server {
 
 <% if fetch(:enable_ssl) %>
 server {
-  server_name <%= fetch(:server_name) %>;
+  server_name <%= fetch(:domain_name) %>;
   listen 443;
   root <%= fetch(:deploy_to) %>/current/public;
 
