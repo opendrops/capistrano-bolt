@@ -1,0 +1,7 @@
+# Change example.com to your server hostname and 'deploy' to the user name of your server
+# that you can use to login to the server from your workstation
+
+server 'example.com', user: 'deploy', roles: %w{web app db}
+
+# Change myapp.com to the domain name intended for accessing your app by public
+set :domain_name, 'myapp.com'
