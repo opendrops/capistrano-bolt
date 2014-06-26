@@ -8,9 +8,9 @@ task :install do
   config_dir = Pathname.new('config')
   deploy_dir = config_dir.join('deploy')
 
-  deploy_rb = File.expand_path("../../templates/deploy.rb.erb", __FILE__)
-  stage_rb = File.expand_path("../../templates/stage.rb.erb", __FILE__)
-  capfile = File.expand_path("../../templates/Capfile", __FILE__)
+  deploy_rb = File.expand_path("../../templates/capistrano/deploy.rb.erb", __FILE__)
+  stage_rb = File.expand_path("../../templates/capistrano/stage.rb.erb", __FILE__)
+  capfile = File.expand_path("../../templates/capistrano/Capfile", __FILE__)
 
   mkdir_p deploy_dir
 
