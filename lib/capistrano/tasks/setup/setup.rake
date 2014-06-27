@@ -6,9 +6,12 @@ namespace :setup do
   task :postgresql do
     invoke "postgresql:create_role"
     invoke "postgresql:create_db"
-    from = File.expand_path("../../templates/postgresql/database.yml.erb", __FILE__)
-    to = File.join(shared_path, 'config/database.yml')
-    upload_template(from, to)
+    on roles(:app) do
+      from = File.expand_path("../../../templates/postgresql/database.yml.erb", __FILE__)
+      to = File.join(shared_path, 'config/database.yml')
+      execute :mkdir, '-pv', "#{shared_path}/config"
+      upload_template(from, to)
+    end
   end
 
   desc 'add site, enable and reload nginx'
@@ -32,7 +35,7 @@ namespace :setup do
   desc 'create a dotenv file for secure environment data'
   task :dotenv do
     on roles(:app) do
-      from = File.expand_path("../../templates/dotenv.erb", __FILE__)
+      from = File.expand_path("../../../templates/dotenv.erb", __FILE__)
       to = File.join(shared_path, '.env')
       upload_template(from, to)
     end
