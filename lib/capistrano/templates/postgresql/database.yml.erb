@@ -3,8 +3,9 @@
   timeout: 5000
   encoding: utf8
   reconnect: false
-  database: <%= "#{fetch(:postgresql_user)}" %>
+  database: ENV['DATABASE_NAME']
   pool: 5
-  username: <%= "#{fetch(:postgresql_database)}" %>
+  username: ENV['DATABASE_USER']
+  password: ENV['DATABASE_PASSWORD']
   host: <%= "#{fetch(:postgresql_host)}" %>
   port: 5432
