@@ -17,8 +17,9 @@ namespace :nginx do
   task :load_vars do
     set :sites_available, -> { File.join(fetch(:nginx_root_path), fetch(:nginx_sites_available)) }
     set :sites_enabled, -> { File.join(fetch(:nginx_root_path), fetch(:nginx_sites_enabled)) }
-    set :enabled_application, -> { File.join(fetch(:sites_enabled), fetch(:application)) }
-    set :available_application, -> { File.join(fetch(:sites_available), fetch(:application)) }
+    set :application_stage, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
+    set :enabled_application, -> { File.join(fetch(:sites_enabled), fetch(:application_stage)) }
+    set :available_application, -> { File.join(fetch(:sites_available), fetch(:application_stage)) }
   end
 
   desc "Remove default Nginx Virtual Host"
@@ -64,7 +65,7 @@ namespace :nginx do
           config = ERB.new(File.read(config_file)).result(binding)
           upload! StringIO.new(config), '/tmp/nginx.conf'
 
-          execute :sudo, :mv, '/tmp/nginx.conf', fetch(:application)
+          execute :sudo, :mv, '/tmp/nginx.conf', "#{fetch(:application_stage)}"
         end
       end
     end
