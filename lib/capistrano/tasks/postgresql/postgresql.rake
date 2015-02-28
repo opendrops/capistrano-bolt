@@ -2,9 +2,9 @@ namespace :load do
   task :defaults do
     set :postgresql_admin, "postgres"
     set :postgresql_host, "localhost"
-    set :postgresql_user, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
+    set :postgresql_user, -> { "#{fetch(:application)}_#{fetch(:stage)}".downcase }
     set :postgresql_password, SecureRandom.hex(40)
-    set :postgresql_database, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
+    set :postgresql_database, -> { "#{fetch(:application)}_#{fetch(:stage)}".downcase }
   end
 end
 
