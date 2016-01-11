@@ -33,11 +33,6 @@ If you are like me and want a simple deployment process like above then this gem
 3. configuring puma app server with the created Nginx vhost file
 
 ---
-This gem is currently under active development but can be used for deploying as of now. The pending tasks as of now is to further simplify the installation and setup process and to make this gem truly a one step deploy gem.
-
-<strike>Documentation for using this gem will be shortly updated.</strike>
-## A very brief documentation for the early adopters.
-(I will get a detailed documetation in the next two days.)
 
 ### Prerequisites 
 Bolt assumes that you have nginx, postgresql and ruby installed on your server. If not, you can install all these with the following command
